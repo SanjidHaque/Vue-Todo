@@ -17,7 +17,7 @@
                     <div class="row">
                         <div class="col-xl-12" v-for="(todo, index) in getTodos" v-bind:key="todo.id">
 
-                            <div class="row" id="something">
+                            <div class="row" id="parent">
                                 <div class="col-xl-1" v-on:click="onMarkTodoAsCompleted(todo)">
 
                                 </div>
@@ -43,7 +43,7 @@
                                         </form>
                                     </div>
                                 </div>
-                                <div class="col-xl-1 hide"
+                                <div class="col-xl-1 child"
                                      v-on:click="onDeleteTodo(index)"
                                      style="opacity: .6; cursor: pointer">
                                     <i class="fas fa-times"></i>
@@ -164,6 +164,7 @@
         0 20px 1px -9px rgba(119, 119, 119, 0.15);
     }
     .actions{
+        width: 100%!important;
         font-size: 14px;
         opacity: .7;
         padding-left: 15px;
@@ -173,10 +174,10 @@
         text-decoration: line-through;
         opacity: .5;
     }
-    #something .hide{
+    #parent .child{
         display: none;
     }
-    #something:hover .hide{
+    #parent:hover .child{
         display: block;
     }
 </style>
